@@ -18,23 +18,24 @@ type PAN string
 
 //Crad info abaout paycard
 type Card struct {
-	ID       	int
-	PAN      	PAN
-	Balance  	Money
-	Currency 	Currency
-	Color    	string
-	Name     	string
-	Active   	bool
-	MinBalance	Money
+	ID         int
+	PAN        PAN
+	Balance    Money
+	Currency   Currency
+	Color      string
+	Name       string
+	Active     bool
+	MinBalance Money
 }
 
-type Payment struct{
-	ID 		int
-	Amount 	Money
+type Payment struct {
+	ID     int
+	Amount Money
 }
 
 type PaymentSource struct {
-	 Type string // card
-	 Number string // card Number
-	 Balance Money // diram
+	Type    string // card
+	Number  string // card Number
+	Balance Money  // diram
+	//Test
 }
