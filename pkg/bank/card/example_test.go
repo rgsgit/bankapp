@@ -195,3 +195,44 @@ func ExampleTotal_inActive() {
 	//Output:
 	//0
 }
+
+func ExamplePaymentSources(){
+	cards := []types.Card{
+		{
+			Balance: 30_000_00,
+			Active:  true,
+			Currency: "TJS",
+			PAN: "1111 1111 1111 1111",
+		},
+		{
+			Balance: 0,
+			Active:  true,
+			Currency: "TJS",
+			PAN: "1111 1111 1111 1112",
+		},
+		{
+			Balance: 10_000_00,
+			Active:  true,
+			Currency: "TJS",
+			PAN: "1111 1111 1111 1113",
+		},
+		{
+			Balance: 10_000_00,
+			Active:  false,
+			Currency: "TJS",
+			PAN: "1111 1111 1111 1114",
+		},
+	}
+	
+	result := PaymentSources(cards)
+
+	for _, paymentSource := range result{
+		fmt.Println(paymentSource.Number)
+	}
+
+	//Output:
+	//1111 1111 1111 1111
+	//1111 1111 1111 1113
+}
+
+

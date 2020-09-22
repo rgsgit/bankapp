@@ -32,3 +32,9 @@ type Payment struct{
 	ID 		int
 	Amount 	Money
 }
+
+type PaymentSource struct {
+	 Type string // card
+	 Number string // card Number
+	 Balance Money // diram
+}
